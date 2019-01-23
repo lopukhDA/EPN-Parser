@@ -12,7 +12,7 @@ namespace EPN_Parser.EpnApi
 {
     public class Parser
     {
-        private readonly string _url = "http://api.epn.bz/json";
+        private const string Url = "http://api.epn.bz/json";
 
         public List<Offer> GetTopProduct()
         {
@@ -27,19 +27,43 @@ namespace EPN_Parser.EpnApi
                     }
                 }
             };
-            var data = top.ToJson();
+            var responseObj = ExecuteMethod(top);
+            var products = responseObj.Results.Request.Offers;
+            return products;
+        }
+
+        public Offer GetProduct(string id)
+        {
+            var productReq = new RequestEpn()
+            {
+                Requests = new Requests()
+                {
+                    Request = new Request()
+                    {
+                        ActionRequest = ActionRequest.offer_info,
+                        Lang = Lang.ru,
+                        Id = id
+                    }
+                }
+            };
+            var responseObj = ExecuteMethod(productReq);
+            var product = responseObj.Results.Request.Offer;
+            return product;
+        }
+
+        private Response ExecuteMethod(RequestEpn request)
+        {
+            var data = request.ToJson();
 
             string response;
             using (var webClient = new WebClient())
             {
 
-                response = webClient.UploadString(_url, data);
+                response = webClient.UploadString(Url, data);
             }
 
-            var responseObj = TopProductsResponse.FromJson(response);
-            var products = responseObj.Results.Request.Offers;
-            return products;
+            var responseObj = Response.FromJson(response);
+            return responseObj;
         }
-        
     }
 }

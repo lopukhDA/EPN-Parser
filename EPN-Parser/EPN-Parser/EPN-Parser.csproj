@@ -52,7 +52,7 @@
     <Compile Include="EpnApi\Entity\Helper.cs" />
     <Compile Include="EpnApi\Entity\Offer.cs" />
     <Compile Include="EpnApi\Entity\RequestEpn.cs" />
-    <Compile Include="EpnApi\Entity\TopProductsResponse.cs" />
+    <Compile Include="EpnApi\Entity\Response.cs" />
     <Compile Include="EpnApi\Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

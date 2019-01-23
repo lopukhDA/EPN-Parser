@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Newtonsoft.Json;
 
-    public partial class TopProductsResponse
+    public partial class Response
     {
         [JsonProperty("results")]
         public Results Results { get; set; }
@@ -11,7 +11,7 @@
         [JsonProperty("identified_as")]
         public string IdentifiedAs { get; set; }
 
-        public static TopProductsResponse FromJson(string json) => JsonConvert.DeserializeObject<TopProductsResponse>(json, Converter.Settings);
+        public static Response FromJson(string json) => JsonConvert.DeserializeObject<Response>(json, Converter.Settings);
     }
 
     public partial class Results
@@ -24,5 +24,8 @@
     {
         [JsonProperty("offers")]
         public List<Offer> Offers { get; set; }
+
+        [JsonProperty("offer")]
+        public Offer Offer { get; set; }
     }
 }

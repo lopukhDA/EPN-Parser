@@ -52,7 +52,7 @@
     public static class Serialize
     {
         public static string ToJson(this RequestEpn self) => JsonConvert.SerializeObject(self, Converter.Settings);
-        public static string ToJson(this TopProductsResponse self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this Response self) => JsonConvert.SerializeObject(self, Converter.Settings);
         public static string ToJson(this Offer self) => JsonConvert.SerializeObject(self, Converter.Settings);
     }
 }
