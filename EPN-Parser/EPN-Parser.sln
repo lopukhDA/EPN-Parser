@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPN-Parser", "EPN-Parser\EPN-Parser.csproj", "{AA06F004-C015-4D36-92F3-AE9310800BBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AA06F004-C015-4D36-92F3-AE9310800BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA06F004-C015-4D36-92F3-AE9310800BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA06F004-C015-4D36-92F3-AE9310800BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
