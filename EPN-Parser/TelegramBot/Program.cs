@@ -6,7 +6,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
-namespace TelegramBot
+namespace TelegramBotNotifier
 {
 	public class Program
 	{
@@ -26,7 +26,7 @@ namespace TelegramBot
 			{
 				Text = "Trying *all the parameters* of `sendMessage` method",
 			};
-			BotPostPhoto(myMsg);
+			//BotPostPhoto(myMsg);
 
 			_botClient.OnMessage += BotOnMessage;
 			_botClient.StartReceiving();

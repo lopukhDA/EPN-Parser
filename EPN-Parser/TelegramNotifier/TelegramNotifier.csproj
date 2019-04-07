@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TelegramBot</RootNamespace>
-    <AssemblyName>TelegramBot</AssemblyName>
+    <ProjectGuid>{511CF9C6-C0B1-4770-B0D0-7AEF2B1C0EFA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TelegramNotifier</RootNamespace>
+    <AssemblyName>TelegramNotifier</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,29 +33,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telegram.Bot, Version=14.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telegram.Bot.14.10.0\lib\net45\Telegram.Bot.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyServiceInstaller.Designer.cs">
+      <DependentUpon>MyServiceInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelegramNotifier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelegramNotifier.Designer.cs">
+      <DependentUpon>TelegramNotifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TelegramBot\TelegramBotNotifier.csproj">
+      <Project>{037A1C92-F8C4-43BA-9D75-67BD6DDBDA4C}</Project>
+      <Name>TelegramBotNotifier</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
